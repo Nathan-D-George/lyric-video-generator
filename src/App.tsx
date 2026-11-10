@@ -33,13 +33,6 @@ const parseMinutesToSeconds = (minutesString: string): number => {
 };
 
 export default function App() {
-  console.log("✅✅✅✅✅✅✅✅✅");
-  console.log("✅✅✅✅✅✅✅✅✅");
-  console.log("✅✅✅✅✅✅✅✅✅");
-  console.log("✅✅✅✅✅✅✅✅✅");
-  console.log("✅✅✅✅✅✅✅✅✅");
-  console.log("✅✅✅✅✅✅✅✅✅");
-
   // Navigation States
   const [currentView, setCurrentView] = useState<'home' | 'workbench'>('home');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);

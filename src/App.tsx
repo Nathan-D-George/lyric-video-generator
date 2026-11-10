@@ -45,7 +45,7 @@ export default function App() {
   const [hasActiveProject, setHasActiveProject] = useState(false);
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   const [audioFilename, setAudioFilename] = useState<string | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [slides, setSlides] = useState<LyricSegment[]>([]);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
@@ -254,7 +254,7 @@ export default function App() {
       setSyncPointerIndex(0);
       audioRef.current.currentTime = 0;
       audioRef.current.play();
-      setIsPlaying(true);
+      // setIsPlaying(true);
       if (slides.length > 0) {
         updateSlideField(slides[0].id, 'startTime', 0);
         setActiveSlideId(slides[0].id);
@@ -262,7 +262,7 @@ export default function App() {
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
       saveProjectToCookie();
     }
   };
@@ -281,7 +281,7 @@ export default function App() {
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
       saveProjectToCookie();
       alert('Live performance sequence synchronization recorded.');
     }
@@ -318,11 +318,11 @@ export default function App() {
     recorder.start();
     audio.play();
 
-    setIsPlaying(true);
+    // setIsPlaying(true);
 
     audio.onended = () => {
       recorder.stop();
-      setIsPlaying(false);
+      // setIsPlaying(false);
     };
   };
 

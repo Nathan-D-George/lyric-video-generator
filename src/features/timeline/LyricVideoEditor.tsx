@@ -18,7 +18,7 @@ const parseMinutesToSeconds = (minutesString: string): number => {
 
 export const LyricVideoEditor: React.FC = () => {
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
 
   // Slides contain text and timing markers only
@@ -131,7 +131,10 @@ export const LyricVideoEditor: React.FC = () => {
   };
 
   const handleDragStart = (index: number) => setDraggedIndex(index);
-  const handleDragOver = (index: number, e: React.DragEvent) => e.preventDefault();
+  const handleDragOver = (index: number, e: React.DragEvent) => {
+    console.log("index - ", index);
+    e.preventDefault();
+  };
   const handleDrop = (index: number) => {
     if (draggedIndex === null) return;
     const updatedSlides = [...slides];
@@ -148,7 +151,7 @@ export const LyricVideoEditor: React.FC = () => {
       setSyncPointerIndex(0);
       audioRef.current.currentTime = 0;
       audioRef.current.play();
-      setIsPlaying(true);
+      // setIsPlaying(true);
       if (slides.length > 0) {
         updateSlideField(slides[0].id, 'startTime', 0);
         setActiveSlideId(slides[0].id);
@@ -156,7 +159,7 @@ export const LyricVideoEditor: React.FC = () => {
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
     }
   };
 
@@ -177,7 +180,7 @@ export const LyricVideoEditor: React.FC = () => {
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
       alert('Live sync configuration session completed successfully!');
     }
   };
@@ -224,11 +227,11 @@ export const LyricVideoEditor: React.FC = () => {
     audio.currentTime = 0;
     recorder.start();
     audio.play();
-    setIsPlaying(true);
+    // setIsPlaying(true);
 
     audio.onended = () => {
       recorder.stop();
-      setIsPlaying(false);
+      // setIsPlaying(false);
     };
   };
 

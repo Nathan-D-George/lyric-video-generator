@@ -1,13 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { auth, db } from '../utils/firebase';
+import {
+  //  auth,
+   db } from '../utils/firebase';
 import { 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword, 
-  signOut, 
-  onAuthStateChanged,
+  // signInWithEmailAndPassword, 
+  // createUserWithEmailAndPassword, 
+  // signOut, 
+  // onAuthStateChanged,
   type User
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, deleteDoc, type DocumentData, DocumentSnapshot } from 'firebase/firestore';
+import { doc, 
+  // getDoc,
+   setDoc, deleteDoc, 
+  //  type DocumentData,
+  //   DocumentSnapshot
+   } from 'firebase/firestore';
 import { type LyricSegment, type VideoSettings, type UserVideoSession } from '../features/timeline/types';
 import { formatTimeToMinutes, parseMinutesToSeconds } from '../components/helpers';
 
@@ -17,13 +24,13 @@ export default function LyricEditor({user, videoData}: {user: User; videoData: U
   // const [user, setUser] = useState<User | null>(null);
   const [authMode, setAuthMode] = useState<'home' | 'login' | 'signup' | 'dashboard' | 'workbench'>('home');
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // Core Application Workbench States
   // const [hasActiveProject, setHasActiveProject] = useState(false);
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   const [audioFilename, setAudioFilename] = useState<string | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [slides, setSlides] = useState<LyricSegment[]>([]);
   const [activeSlideId, setActiveSlideId] = useState<string | null>(null);
@@ -194,7 +201,7 @@ export default function LyricEditor({user, videoData}: {user: User; videoData: U
       setSyncPointerIndex(0);
       audioRef.current.currentTime = 0;
       audioRef.current.play();
-      setIsPlaying(true);
+      // setIsPlaying(true);
       if (slides.length > 0) {
         updateSlideField(slides[0].id, 'startTime', 0);
         setActiveSlideId(slides[0].id);
@@ -202,7 +209,7 @@ export default function LyricEditor({user, videoData}: {user: User; videoData: U
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
       saveProjectToCloud();
     }
   };
@@ -221,7 +228,7 @@ export default function LyricEditor({user, videoData}: {user: User; videoData: U
     } else {
       setIsSyncModeActive(false);
       audioRef.current.pause();
-      setIsPlaying(false);
+      // setIsPlaying(false);
       saveProjectToCloud();
       alert('Live performance sequence synchronization recorded.');
     }
@@ -267,11 +274,11 @@ export default function LyricEditor({user, videoData}: {user: User; videoData: U
     audio.currentTime = 0;
     recorder.start();
     audio.play();
-    setIsPlaying(true);
+    // setIsPlaying(true);
 
     audio.onended = () => {
       recorder.stop();
-      setIsPlaying(false);
+      // setIsPlaying(false);
     };
   };
 

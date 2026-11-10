@@ -2,12 +2,15 @@
   "name": "lyric-video-generator",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://nathan-d-george.github.io/lyric-video-generator/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/js-cookie": "^3.0.6",
@@ -27,6 +30,7 @@
     "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
+    "gh-pages": "^6.3.0",
     "globals": "^17.7.0",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",

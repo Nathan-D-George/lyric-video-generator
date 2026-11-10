@@ -19,7 +19,12 @@ import { type LyricSegment, type VideoSettings, type UserVideoSession } from '..
 import { formatTimeToMinutes, parseMinutesToSeconds } from '../components/helpers';
 
 export default function LyricEditor({user, videoData}: {user: User; videoData: UserVideoSession | null}) {
-
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
+  console.log("⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽");
   // Navigation & User Management States
   // const [user, setUser] = useState<User | null>(null);
   const [authMode, setAuthMode] = useState<'home' | 'login' | 'signup' | 'dashboard' | 'workbench'>('home');

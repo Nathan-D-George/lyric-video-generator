@@ -17,6 +17,12 @@ const parseMinutesToSeconds = (minutesString: string): number => {
 };
 
 export const LyricVideoEditor: React.FC = () => {
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
+  console.log("🎹🎹🎹🎹🎹🎹🎹");
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   // const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
